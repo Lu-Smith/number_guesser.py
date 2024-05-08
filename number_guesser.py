@@ -1,7 +1,6 @@
 import random
 
-start = -5
-stop = 11
+start = -10
 
 top_of_range = input("Type a number: ")
 
@@ -18,9 +17,11 @@ else :
 
 random_number = random.randint(start, top_of_range)
 print("Random number between", start, "and", top_of_range)
+guesses = 0
 
 while True:
     user_guess = input("Make your guess ")
+    guesses += 1
 
     if user_guess.lstrip('-').isdigit():
         user_guess = int(user_guess)
@@ -33,7 +34,16 @@ while True:
         print("You got it!")
         break
     else:
-        print("You didn't got it!")
+        if user_guess > random_number:
+            print("Try smaller number!")
+        else:
+            print("Try bigger number!")
+
+
+if guesses == 1:
+    print("It took you", guesses, "guess to find the number!")
+else:
+    print("It took you", guesses, "guesses to find the number!") 
 
 
 
