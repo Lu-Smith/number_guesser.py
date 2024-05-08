@@ -25,19 +25,17 @@ while True:
 
     if user_guess.lstrip('-').isdigit():
         user_guess = int(user_guess)
-
-    else :
+    else:
         print ("Please write a number next time.")
         continue
 
     if user_guess == random_number:
         print("You got it!")
         break
+    elif user_guess > random_number:
+        print("Try smaller number!")
     else:
-        if user_guess > random_number:
-            print("Try smaller number!")
-        else:
-            print("Try bigger number!")
+        print("Try bigger number!")
 
 
 if guesses == 1:
